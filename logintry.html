@@ -1134,18 +1134,6 @@
        </div>
       </div>
      </div>
-    </div><!-- Training Chart -->
-    <div class="glass rounded-3xl p-8 scroll-reveal">
-     <h4 class="text-lg font-bold mb-6">Accuracy Over Epochs</h4>
-     <div class="relative h-64 bg-black/30 rounded-2xl border border-cyan-500/20 p-6 overflow-hidden">
-      <svg id="accuracyChart" viewbox="0 0 800 250" class="w-full h-full"><defs>
-        <lineargradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-         <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3" />
-         <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0" />
-        </lineargradient>
-       </defs> <polyline points="0,250 0,250" fill="none" stroke="#0ea5e9" stroke-width="2" id="chartLine" /> <polygon points="0,250" fill="url(#chartGradient)" id="chartFill" />
-      </svg>
-     </div>
     </div>
    </div>
   </section><!-- CTA Section -->
@@ -1234,33 +1222,7 @@
      <p class="text-gray-500">Don't have an account? <button id="switchToRegister" class="text-indigo-400 hover:text-indigo-300">Sign up</button></p>
     </div>
    </div>
-  </div><!-- Register Modal -->
-  <div id="registerModal" class="modal-overlay fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-   <div class="modal-content glass rounded-3xl p-8 w-full max-w-md">
-    <div class="flex items-center justify-between mb-6">
-     <h3 class="text-2xl font-bold">Create Account</h3><button id="closeRegisterModal" class="text-gray-400 hover:text-white transition-colors">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg></button>
-    </div>
-    <form id="registerForm" class="space-y-4" action="/register" method="POST">
-     <div class="grid grid-cols-2 gap-4">
-      <div><label class="block text-sm text-gray-400 mb-2">First Name</label> <input type="text" name="firstName" required class="form-input w-full px-4 py-3 rounded-xl text-white" placeholder="John">
-      </div>
-      <div><label class="block text-sm text-gray-400 mb-2">Last Name</label> <input type="text" name="lastName" required class="form-input w-full px-4 py-3 rounded-xl text-white" placeholder="Doe">
-      </div>
-     </div>
-     <div><label class="block text-sm text-gray-400 mb-2">Email Address</label> <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-xl text-white" placeholder="you@example.com">
-     </div>
-     <div><label class="block text-sm text-gray-400 mb-2">Company (Optional)</label> <input type="text" name="company" class="form-input w-full px-4 py-3 rounded-xl text-white" placeholder="Your Company">
-     </div>
-     <div><label class="block text-sm text-gray-400 mb-2">Password</label> <input type="password" name="password" required minlength="8" class="form-input w-full px-4 py-3 rounded-xl text-white" placeholder="••••••••">
-     </div>
-     <div><label class="flex items-center gap-2 text-gray-400 text-sm"> <input type="checkbox" required class="rounded border-gray-600 bg-transparent"> <span>I agree to the <a href="#" class="text-indigo-400">Terms of Service</a> and <a href="#" class="text-indigo-400">Privacy Policy</a></span> </label>
-     </div><button type="submit" class="btn-primary w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-indigo-500/30 transition-all"> Create Account </button>
-    </form>
-    <div class="mt-6 text-center">
-     <p class="text-gray-500">Already have an account? <button id="switchToLogin" class="text-indigo-400 hover:text-indigo-300">Sign in</button></p>
-    </div>
+  
    </div>
   </div>
   <script>
