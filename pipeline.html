@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Animated Pipeline Background -->
+   <div class="absolute inset-0 overflow-hidden z-0">
+    <div class="absolute inset-0 flex items-center justify-center perspective" style="transform-style: preserve-3d;">
+     <!-- Giant Pipeline Visualization -->
+     <div class="relative w-full h-full flex flex-col items-center justify-center gap-8 p-8">
+      <!-- Floating Particles -->
+      <div id="particles" class="fixed inset-0 pointer-events-none overflow-hidden"></div><!-- Pipeline Container - MASSIVE -->
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 w-full max-w-7xl mx-auto px-4">
+       <!-- Node 1 -->
+       <div class="flex flex-col items-center animate-float" style="animation-delay: 0s;">
+        <div class="pipeline-node-massive bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center" style="animation-delay: 0s; box-shadow: 0 0 100px rgba(59, 130, 246, 0.6), 0 0 200px rgba(59, 130, 246, 0.3);">
+         <svg class="w-24 h-24 stroke-[1]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+         </svg>
+        </div><span class="mt-6 text-sm font-bold text-gray-300">Upload</span>
+       </div><!-- Connector 1 -->
+       <div class="hidden md:block h-2 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" style="box-shadow: 0 0 40px rgba(59, 130, 246, 0.7), 0 0 80px rgba(99, 102, 241, 0.4);"></div>
+       <div class="md:hidden w-2 h-24 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full" style="box-shadow: 0 0 40px rgba(59, 130, 246, 0.7), 0 0 80px rgba(99, 102, 241, 0.4);"></div><!-- Node 2 -->
+       <div class="flex flex-col items-center animate-float" style="animation-delay: 0.5s;">
+        <div class="pipeline-node-massive bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center" style="animation-delay: 0.5s; box-shadow: 0 0 100px rgba(99, 102, 241, 0.6), 0 0 200px rgba(99, 102, 241, 0.3);">
+         <svg class="w-24 h-24 stroke-[1]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+         </svg>
+        </div><span class="mt-6 text-sm font-bold text-gray-300">Process</span>
+       </div><!-- Connector 2 -->
+       <div class="hidden md:block h-2 w-24 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" style="box-shadow: 0 0 40px rgba(99, 102, 241, 0.7), 0 0 80px rgba(147, 51, 234, 0.4);"></div>
+       <div class="md:hidden w-2 h-24 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full" style="box-shadow: 0 0 40px rgba(99, 102, 241, 0.7), 0 0 80px rgba(147, 51, 234, 0.4);"></div><!-- Node 3 -->
+       <div class="flex flex-col items-center animate-float" style="animation-delay: 1s;">
+        <div class="pipeline-node-massive bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center" style="animation-delay: 1s; box-shadow: 0 0 100px rgba(147, 51, 234, 0.6), 0 0 200px rgba(147, 51, 234, 0.3);">
+         <svg class="w-24 h-24 stroke-[1]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+         </svg>
+        </div><span class="mt-6 text-sm font-bold text-gray-300">Detect</span>
+       </div><!-- Connector 3 -->
+       <div class="hidden md:block h-2 w-24 bg-gradient-to-r from-purple-500 to-amber-500 rounded-full" style="box-shadow: 0 0 40px rgba(147, 51, 234, 0.7), 0 0 80px rgba(217, 119, 6, 0.4);"></div>
+       <div class="md:hidden w-2 h-24 bg-gradient-to-b from-purple-500 to-amber-500 rounded-full" style="box-shadow: 0 0 40px rgba(147, 51, 234, 0.7), 0 0 80px rgba(217, 119, 6, 0.4);"></div><!-- Node 4 -->
+       <div class="flex flex-col items-center animate-float" style="animation-delay: 1.5s;">
+        <div class="pipeline-node-massive bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center" style="animation-delay: 1.5s; box-shadow: 0 0 100px rgba(217, 119, 6, 0.6), 0 0 200px rgba(217, 119, 6, 0.3);">
+         <svg class="w-24 h-24 stroke-[1]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+         </svg>
+        </div><span class="mt-6 text-sm font-bold text-gray-300">Analyze</span>
+       </div><!-- Connector 4 -->
+       <div class="hidden md:block h-2 w-24 bg-gradient-to-r from-amber-500 to-emerald-500 rounded-full" style="box-shadow: 0 0 40px rgba(217, 119, 6, 0.7), 0 0 80px rgba(16, 185, 129, 0.4);"></div>
+       <div class="md:hidden w-2 h-24 bg-gradient-to-b from-amber-500 to-emerald-500 rounded-full" style="box-shadow: 0 0 40px rgba(217, 119, 6, 0.7), 0 0 80px rgba(16, 185, 129, 0.4);"></div><!-- Node 5 -->
+       <div class="flex flex-col items-center animate-float" style="animation-delay: 2s;">
+        <div class="pipeline-node-massive bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center" style="animation-delay: 2s; box-shadow: 0 0 100px rgba(16, 185, 129, 0.6), 0 0 200px rgba(16, 185, 129, 0.3);">
+         <svg class="w-24 h-24 stroke-[1]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+         </svg>
+        </div><span class="mt-6 text-sm font-bold text-gray-300">Explain</span>
+       </div><!-- Connector 5 -->
+       <div class="hidden md:block h-2 w-24 bg-gradient-to-r from-emerald-500 to-rose-500 rounded-full" style="box-shadow: 0 0 40px rgba(16, 185, 129, 0.7), 0 0 80px rgba(244, 63, 94, 0.4);"></div>
+       <div class="md:hidden w-2 h-24 bg-gradient-to-b from-emerald-500 to-rose-500 rounded-full" style="box-shadow: 0 0 40px rgba(16, 185, 129, 0.7), 0 0 80px rgba(244, 63, 94, 0.4);"></div><!-- Node 6 -->
+       <div class="flex flex-col items-center animate-float" style="animation-delay: 2.5s;">
+        <div class="pipeline-node-massive bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center" style="animation-delay: 2.5s; box-shadow: 0 0 100px rgba(244, 63, 94, 0.6), 0 0 200px rgba(244, 63, 94, 0.3);">
+         <svg class="w-24 h-24 stroke-[1]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+         </svg>
+        </div><span class="mt-6 text-sm font-bold text-gray-300">Auto-Repair</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Login Form Card - Overlaid on Pipeline -->
+   <div class="relative z-20 w-full max-w-md px-6">
+    <div class="glass rounded-3xl p-10 shadow-2xl" style="background: rgba(15, 15, 35, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);">
+     <!-- Logo -->
+     <div class="flex items-center justify-center mb-8">
+      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center glow-box shadow-lg shadow-indigo-500/30">
+       <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+       </svg>
+      </div>
+     </div>
+     <h1 class="text-3xl font-bold text-center mb-2">Welcome Back</h1>
+     <p class="text-gray-400 text-center mb-8">Sign in to your MLOps dashboard</p><!-- Login Form -->
+     <form id="loginForm" class="space-y-5" onsubmit="handleLogin(event)">
+      <div>
+       <label class="block text-sm text-gray-300 mb-2 font-medium">Email Address</label> <input type="email" required class="form-input w-full px-4 py-3 rounded-xl text-white transition-all" placeholder="you@example.com" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+      </div>
+      <div>
+       <label class="block text-sm text-gray-300 mb-2 font-medium">Password</label> <input type="password" required class="form-input w-full px-4 py-3 rounded-xl text-white transition-all" placeholder="••••••••" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+      </div>
+      <div class="flex items-center justify-between text-sm">
+       <label class="flex items-center gap-2 text-gray-400 cursor-pointer"> <input type="checkbox" class="rounded border-gray-600 bg-transparent"> <span>Remember me</span> </label> <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors">Forgot password?</a>
+      </div><button type="submit" class="btn-primary w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold hover:shadow-2xl hover:shadow-indigo-500/40 transition-all mt-6"> Sign In </button>
+     </form>
+     <div class="mt-8 text-center">
+      <p class="text-gray-500">Don't have an account? <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium">Create one</a></p>
+     </div>
+    </div>
+   </div>
+<body>
+    
+</body>
+</html>
