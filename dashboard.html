@@ -1,11 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML Ops Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", sans-serif;
+}
+
+body{
+display:flex;
+background:#f5f7fb;
+color:#333;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:230px;
+height:100vh;
+background:#111827;
+color:white;
+padding:20px;
+position:fixed;
+}
+
+.sidebar h2{
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+color:#cbd5e1;
+text-decoration:none;
+margin:15px 0;
+padding:10px;
+border-radius:6px;
+}
+
+.sidebar a:hover{
+background:#1f2937;
+}
+
+/* Main */
+
+.main{
+margin-left:230px;
+padding:30px;
+width:100%;
+}
+
+/* Top Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-bottom:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+.card h3{
+font-size:14px;
+color:gray;
+}
+
+.card h1{
+margin-top:10px;
+}
+
+/* Charts */
+
+.charts{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+margin-bottom:30px;
+}
+
+.chart-box{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* Bottom panels */
+
+.panels{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.panel{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+.status{
+color:orange;
+font-weight:bold;
+}
+
+</style>
 </head>
+
+
 <body>
-    <h1>hello dashboard</h1>
+
+<div class="sidebar">
+
+<h2>ML Ops</h2>
+
+<a href="#">Dashboard</a>
+<a href="#">Upload Model</a>
+<a href="#">Upload Dataset</a>
+<a href="#">Run Analysis</a>
+<a href="#">Drift Monitor</a>
+<a href="#">Bias Detection</a>
+<a href="#">Risk Score</a>
+<a href="#">Auto Repair</a>
+<a href="#">Reports</a>
+
+</div>
+
+
+<div class="main">
+
+<h1>AI Model Health Dashboard</h1>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Models Uploaded</h3>
+<h1>12</h1>
+</div>
+
+<div class="card">
+<h3>Drift Score</h3>
+<h1>0.32</h1>
+</div>
+
+<div class="card">
+<h3>Bias Score</h3>
+<h1>5%</h1>
+</div>
+
+<div class="card">
+<h3>Risk Score</h3>
+<h1>72</h1>
+</div>
+
+</div>
+
+
+<div class="charts">
+
+<div class="chart-box">
+<h3>Prediction Distribution</h3>
+<canvas id="predictionChart"></canvas>
+</div>
+
+<div class="chart-box">
+<h3>Drift Trend</h3>
+<canvas id="driftChart"></canvas>
+</div>
+
+</div>
+
+
+<div class="panels">
+
+<div class="panel">
+
+<h3>Model Health Report</h3>
+
+<br>
+
+<p>Accuracy : 91%</p>
+<p>Failure Rate : 4%</p>
+<p>Drift Detected : YES</p>
+<p>Bias Risk : LOW</p>
+<p>Risk Score : 72/100</p>
+
+<br>
+
+<p class="status">⚠ Monitor Required</p>
+
+</div>
+
+
+<div class="panel">
+
+<h3>AI Explanation</h3>
+
+<br>
+
+<p>
+The model shows moderate drift in feature
+<b>customer_income</b>. This suggests that
+the new incoming dataset distribution differs
+from the training dataset.
+
+<br><br>
+
+Bias risk is currently low, however the error
+rate for <b>Class B</b> predictions is slightly higher.
+
+<br><br>
+
+Recommendation:
+<ul>
+<li>Retrain the model</li>
+<li>Clean incoming dataset</li>
+<li>Monitor drift weekly</li>
+</ul>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* Prediction Chart */
+
+new Chart(document.getElementById("predictionChart"),{
+
+type:'bar',
+
+data:{
+labels:["Class A","Class B","Class C"],
+datasets:[{
+label:"Predictions",
+data:[120,90,40]
+}]
+}
+
+});
+
+
+/* Drift Chart */
+
+new Chart(document.getElementById("driftChart"),{
+
+type:'line',
+
+data:{
+labels:["Jan","Feb","Mar","Apr","May"],
+datasets:[{
+label:"Drift Score",
+data:[0.1,0.15,0.2,0.28,0.32]
+}]
+}
+
+});
+
+</script>
+
+
 </body>
 </html>
