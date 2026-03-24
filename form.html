@@ -6,52 +6,91 @@
 </head>
 <body>
 
-<h2>Student Registration Form</h2>
+<h1 align="center">Student Registration Form</h1>
 
 <form>
-    Roll No:<br>
-    <input type="text"><br>
+<fieldset>
+<legend><b>Personal Details</b></legend>
 
-    Name:<br>
-    <input type="text"><br>
+<table cellpadding="8">
+<tr>
+    <td>Roll Number:</td>
+    <td><input type="text" name="rollno"></td>
+</tr>
 
-    Gender:<br>
-    <input type="radio" name="g"> Male
-    <input type="radio" name="g"> Female
-    <input type="radio" name="g"> Other<br><br>
+<tr>
+    <td>Name of Student:</td>
+    <td><input type="text" name="studentname"></td>
+</tr>
 
-    Father Name:<br>
-    <input type="text"><br>
+<tr>
+    <td>Gender:</td>
+    <td>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+    </td>
+</tr>
 
-    Date of Birth:<br>
-    <input type="date"><br>
+<tr>
+    <td>Date of Birth:</td>
+    <td><input type="date" name="dob"></td>
+</tr>
 
-    Contact:<br>
-    <input type="text"><br>
+<tr>
+    <td>Email ID:</td>
+    <td><input type="email" name="email"></td>
+</tr>
 
-    Email:<br>
-    <input type="email"><br>
+<tr>
+    <td>Father Name:</td>
+    <td><input type="text" name="fathername"></td>
+</tr>
 
-    Mailing Address:<br>
-    <textarea></textarea><br>
+<tr>
+    <td>Mother Name:</td>
+    <td><input type="text" name="mothername"></td>
+</tr>
 
-    Permanent Address:<br>
-    <textarea></textarea><br>
+<tr>
+    <td>Course:</td>
+    <td><input type="text" name="course"></td>
+</tr>
 
-    Course:<br>
-    <select>
-        <option>BCA</option>
-        <option>BBA</option>
-        <option>B.Tech</option>
-    </select><br>
+<tr>
+    <td>Medium:</td>
+    <td><input type="text" name="medium"></td>
+</tr>
 
-    Medium:<br>
-    <select>
-        <option>English</option>
-        <option>Hindi</option>
-    </select><br>
+</table>
+</fieldset>
 
+<br>
+
+<fieldset>
+<legend><b>Address Details</b></legend>
+
+<table cellpadding="8">
+<tr>
+    <td>Mailing Address:</td>
+    <td><textarea rows="4" cols="30"></textarea></td>
+</tr>
+
+<tr>
+    <td>Permanent Address:</td>
+    <td><textarea rows="4" cols="30"></textarea></td>
+</tr>
+</table>
+
+</fieldset>
+
+<br>
+
+<center>
     <input type="submit" value="Register">
+    <input type="reset" value="Clear">
+</center>
+
 </form>
 
 </body>
