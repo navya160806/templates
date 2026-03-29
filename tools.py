@@ -7,6 +7,12 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 MODELS_DIR = os.path.join(BASE_DIR, 'models')
 LOG_FILE = os.path.join(DATA_DIR, 'predictions.csv')
 REF_FILE = os.path.join(MODELS_DIR, 'reference_data.csv')
-def get_recent_predictions(limit: int = 50) -> list
-
-"""Returns the last N prediction records as a list of dictionaries."""
+def get_recent_predictions(limit: int = 50) -> list:
+	"""Returns the last N prediction records as a list of dictionaries."""
+	if not os.path.exists(LOG_FILE):
+		return []
+	try:
+		df = pd.read_csv(LOG_FILE)
+		return df.tail(limit).to_dict(orient='records')
+	except Exception as e:
+		return [{"error": str(e)}]
