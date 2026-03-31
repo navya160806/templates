@@ -1,3 +1,12 @@
+```python
+import pandas as pd
+import numpy as np
+import joblib
+import os
+from sklearn.ensemble import RandomForestClassifier
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODELS_DIR = os.path.join(BASE_DIR, 'models')
+def perform_auto_repair():
 print("AGENT: Starting Auto-Repair...")
 ref_path = os.path.join(MODELS_DIR, 'reference_data.csv')
 if not os.path.exists(ref_path):
