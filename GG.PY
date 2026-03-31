@@ -17,3 +17,11 @@ df_ref = pd.read_csv(ref_path)
 df_clean = df_ref.copy()
 noise = np.random.normal(0, 0.01, size=df_clean.iloc[:, :-1].shape)
 df_clean.iloc[:, :-1] += noise
+df_ref = pd.read_csv(ref_path)
+# Step 2: Simulate data cleaning (add small noise to represent new balanced data)
+df_clean = df_ref.copy()
+noise = np.random.normal(0, 0.01, size=df_clean.iloc[:, :-1].shape)
+df_clean.iloc[:, :-1] += noise
+clean_data_path = os.path.join(MODELS_DIR, 'repaired_data.csv')
+df_clean.to_csv(clean_data_path, index=False)
+print(f"Data cleaned and saved.")
