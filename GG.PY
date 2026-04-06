@@ -25,3 +25,15 @@ df_clean.iloc[:, :-1] += noise
 clean_data_path = os.path.join(MODELS_DIR, 'repaired_data.csv')
 df_clean.to_csv(clean_data_path, index=False)
 print(f"Data cleaned and saved.")
+df = pd.DataFrame(recents)
+avg_conf = float(df['confidence'].mean())
+df_gt = df.dropna(subset=['ground_truth'])
+accuracy = None
+if not df_gt.empty:
+correct = df_gt[df_gt['prediction'] == df_gt['ground_truth'].astype(int)]
+accuracy = float(len(correct) / len(df_gt))
+return {
+"samples_analyzed": len(df),
+"avg_confidence": avg_conf,
+"estimated_accuracy": accuracy
+}
