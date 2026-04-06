@@ -32,3 +32,12 @@ def perform_auto_repair(recents):
 		"avg_confidence": avg_conf,
 		"estimated_accuracy": accuracy
 	}
+ref_stats = get_ref_data_stats()
+if "error" in ref_stats:
+return ref_stats
+recents = get_recent_predictions(limit=recent_window)
+if not recents:
+return {"status": "Not enough data"}
+df_live = pd.DataFrame(recents)
+drift_report = {}
+for feature in ['f0', 'f1', 'f2', 'f3', 'f4']:
