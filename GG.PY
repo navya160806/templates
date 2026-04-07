@@ -40,4 +40,6 @@ if not recents:
 	return {"status": "Not enough data"}
 df_live = pd.DataFrame(recents)
 drift_report = {}
+
 for feature in ['f0', 'f1', 'f2', 'f3', 'f4']:
+	f='hello'
