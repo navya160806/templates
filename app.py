@@ -4,5 +4,11 @@ app = flask.Flask(__name__)
 def hello_world():
     l=5
     return f'Hello, World! The value of l is {l}'
+ 
+@app.route('/greet/<name>')
+def greet(name):
+    return
+
+
 if __name__ == '__main__':
     app.run(debug=True)
