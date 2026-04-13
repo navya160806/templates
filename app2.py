@@ -8,7 +8,10 @@ return {
     "data_path": clean_data_path,
     "message": "Outliers removed, Bias corrected, Model Retrained."
 }
+
 @app.route('/')
 def home():
     return render_template('index.html')
+    return "Hello, World!"
 if __name__ == '__main__':
+    
