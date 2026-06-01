@@ -14,7 +14,7 @@ return {
 if not os.path.exists(LOG_FILE):
     return []
 try:
-    df = pd.read_csv(LOG_FILE)
+    ddf = pd.read_csv(LOG_FILE)
     return df.tail(limit).to_dict(orient='records')
 except Exception as e:
     return [{"error": str(e)
