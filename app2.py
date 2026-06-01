@@ -8,7 +8,8 @@ return {
     "model_path": repaired_model_path,
     "data_path": clean_data_path,
     "message": "Outliers removed, Bias corrected, Model Retrained."
-    xcept Exception as e:
+    except Exception as e:
+
 }
 if not os.path.exists(LOG_FILE):
     return []
