@@ -28,6 +28,7 @@ def perform_auto_repair(recents):
 		correct = df_gt[df_gt['prediction'] == df_gt['ground_truth'].astype(int)]
 		accuracy = float(len(correct) / len(df_gt))
 	return {
+		
 		"samples_analyzed": len(df),
 		"avg_confidence": avg_conf,
 		"estimated_accuracy": accuracy
