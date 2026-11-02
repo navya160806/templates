@@ -24,6 +24,7 @@ def perform_auto_repair(recents):
 	avg_conf = float(df['confidence'].mean())
 	df_gt = df.dropna(subset=['ground_truth'])
 	accuracy = None
+	
 	if not df_gt.empty:
 		
 		correct = df_gt[df_gt['prediction'] == df_gt['ground_truth'].astype(int)]
